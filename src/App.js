@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 const messages = {
   'tr': {
     title: 'Merhaba Dünya !',
-    desc: '3 yeni mesajınız var'
+    desc: '{count} yeni mesajınız var'
   },
   'en': {
     title: 'Hello World !',
-    desc: 'You have 3 new messages'
+    desc: 'You have {count} new messages'
   }
 }
 function App() {
@@ -24,8 +24,8 @@ function App() {
         <FormattedMessage
           id="title" />
         <p>
-          <FormattedMessage
-            id="desc" />
+          <FormattedMessage id="desc" values={{ count: 5 }} />
+
         </p>
         <br />
         <button onClick={() => setLocale('tr')}>TR</button>
